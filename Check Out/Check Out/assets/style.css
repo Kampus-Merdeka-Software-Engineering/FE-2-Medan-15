@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+:root {
+    --main-color : #00A9FF;
+    --main-font : 'DM Sans', sans-serif;
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1550px;
+}
+
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*-------------------header-----------------------*/
+
+header{
+    height: 8vh;
+    position:sticky;
+}
+
+.logo img{
+    width: 200px;
+    margin-left: 200px;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-right: 250px;
+}
+
+.bar{
+    display:block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.13s ease-in-out;
+}
+
+header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul li{
+    margin-left: 0.5rem;
+    
+}
+
+header ul li a{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:#333333;
+    position:sticky;
+}
+
+
+header ul li img{
+    width: 30px;
+    margin-left: 50px;
+}
+
+/*-------------------banner-----------------------*/
+.banner img{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.banner::after{
+    position:absolute;
+    top: -120%;
+}
+
+/*-------------------form checkout-----------------------*/
+.book{
+    margin-bottom: 400px;
+    display: flex;
+    align-items: center;
+    position:absolute;
+    width: 100%;
+    height: 1vh;
+    color: #333333;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 40px;
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+}
+
+
+.book .input {
+    margin-left: 70px;
+    margin-bottom: 290px;
+    margin-right: 80px;
+    background: white;
+    padding: 30px 10px 50px 85px;
+    border-radius: 32px;
+    box-shadow: 0 8px 24px -4px rgba(27, 46, 94, 0.12);
+}
+
+.book .input {
+    background: #FFF;
+}
+
+.book .search{
+    background: #00A9FF;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00A9FF;
+    outline: none;
+    margin-top: 15px;
+    color: #333333;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: DM Sans, serif;
+}
+
+::placeholder{
+    color:#afadad;
+    font-weight:500;
+}
+
+.book .search{
+    margin-top: 10px;
+    width: 75px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #00A9FF;
+}
+
+.book .search input{
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+
+.search svg{
+    margin-top: 8px;
+    margin-left: 5px;
+    width: 50px;
+    align-items: center;
+    position: absolute;
+    font-size: 5px;
+    font-weight:300;
+}
+
+/*-------------------daerah populer-----------------------*/
+.populer h1{
+    margin-top: 35px;;
+    margin-left: 195px;
+}
+
+.column{
+    margin-top: 35px;
+    margin-left: 195px;
+    float: left;
+    width: 12.17%;
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*-------------------list hotel diskon-----------------------*/
+.diskon{
+    margin-top: 75px;
+    margin-left: 195px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top: 1rem;
+    background: #00A9FF;
+    color:#fff;
+    padding: .8rem 3rem;
+    border-radius: 6px
+}
+
+.packages .box-container{
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.packages .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+}
+
+.packages .box-container .box img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.packages .box-container .box .content{
+    padding: 2rem;
+}
+
+.packages .box-container .box .h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.packages .box-container .box .h3 i {
+    color: var(--yellow);
+}
+
+
+.packages .box-container .box .content p{
+    font-size: 20px;
+    color: #666;
+    padding:1rem 0;
+}
+
+.packages .box-container .box .content .stars i{
+    font-size: 1.7rem;
+}
+
+.packages .box-container .box .content .stars i{
+}
+
+.packages .box-container .box .content .stars i{
+    color: var(--orange);
+}
+
+.packages .box-container .box .content .price{
+    font-size: 2rem;
+    color:#333;
+    padding: 1rem;
+}
+
+.packages .box-container .box .content .price span{
+    font-size: 1.5rem;
+    color:#666;
+    text-decoration: line-through;
+}
+
+.box .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.box .row .img{
+    flex: 1 1 40rem;
+}
+
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.flex-container {
+    display: flex;
+    gap: 16px;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+#title {
+    width: 177px;
+}
+
+#firstName,
+#lastName {
+    flex: 1;
+}
+
+button {
+    background-color: rgb(79, 163, 247);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0e9fe7;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    margin-left: 8px;
+}
+
+.custom-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+
+.custom-checkbox:checked {
+    background-color: #03080e;
+    border-color: #000203;
+}
+
+.custom-checkbox:checked::before {
+    content: "\2713";
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+
+/* Content Container Styles */
+.content-container {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-container {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+img {
+    max-width: 75%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Rectangle Container Styles */
+.rectangle-container {
+    width: 805px;
+    height: 208px;
+    margin-left: 335px;
+    border: 2px solid #d4cece;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.info-container {
+    text-align: center;
+}
+
+/* Price Container Styles */
+.price-container {
+    text-align: center;
+    width: 805px; /* Sesuaikan dengan width dari button */
+    max-width: 100%;
+    margin: 0 auto; /* Untuk membuatnya menjadi tengah */
+}
+
+.price-info {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    text-align: start;
+    justify-content: space-between;
+}
+
+.total-cost {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 805px;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer Styles */
+.site-footer {
+    margin-top: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    width: 805px; /* Sesuaikan dengan width dari price-container */
+    max-width: 100%;
+    margin: 20px auto 0; /* Untuk membuatnya menjadi tengah dan memberikan jarak dari atas */
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-footer .left-section,
+.site-footer .right-section {
+    flex: 1;
+}
+
+.site-footer img {
+    max-width: 100%;
+}
+
+.site-footer h3 {
+    margin-top: 20px;
+}
+
+.site-footer p {
+    margin-bottom: 20px;
+}
+
+.site-footer .contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.site-footer .contact-info img {
+    margin-right: 10px;
+}
