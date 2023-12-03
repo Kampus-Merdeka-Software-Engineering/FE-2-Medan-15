@@ -1,13 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Mendapatkan elemen formulir
-    const contactForm = document.getElementById('contactForm');
-
-    // Menambahkan event listener pada saat formulir disubmit
-    contactForm.addEventListener('submit', function (event) {
-        // Mencegah pengiriman formulir secara default
-        event.preventDefault();
-
-        // Mendapatkan nilai dari formulir
+// Menambahkan event listener pada tombol "Bayar"
+const bayarButton = document.querySelector('button[type="button"]');
+bayarButton.addEventListener('click', function () {
+    // Pemeriksaan URL sebelum melakukan operasi apa pun
+    if (window.location.href.startsWith('http://localhost:63342')) {
+        // Mendapatkan data dari formulir
         const email = document.getElementById('email').value;
         const title = document.getElementById('title').value;
         const firstName = document.getElementById('firstName').value;
@@ -32,31 +28,29 @@ document.addEventListener('DOMContentLoaded', function () {
         // Menampilkan pesan sukses atau tindakan selanjutnya
         alert('Data berhasil disimpan. Lanjutkan ke halaman pembayaran atau tindakan selanjutnya.');
 
-        // Mengarahkan pengguna ke halaman checkin.html
-        window.location.href = 'checkin.html';
-    });
+        // Menampilkan data di konsol untuk keperluan debugging
+        console.log('Data Pembayaran:', formData);
 
-    // Menambahkan event listener pada tombol "Bayar"
-    const bayarButton = document.querySelector('button[type="button"]');
-    bayarButton.addEventListener('click', function () {
-        // Mendapatkan data dari formulir
-        const email = document.getElementById('email').value;
-        const title = document.getElementById('title').value;
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const phone = document.getElementById('phone').value;
-
-        // Membuat objek data
-        const formData = {
-            email: email,
-            title: title,
-            firstName: firstName,
-            lastName: lastName,
-            phone: phone
-        };
-
-        // Mengonversi objek data menjadi JSON
-        const formDataJSON = JSON.stringify(formData);
-
-    });
+        // Lakukan operasi apa pun yang diperlukan
+        // Contoh: Mengirim data ke server (asumsi menggunakan metode POST)
+        fetch('https://example.com/pembayaran', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: formDataJSON,
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle respons dari server (jika diperlukan)
+                console.log('Respon dari server:', data);
+                // Misalnya, lanjutkan ke halaman pembayaran setelah berhasil membayar
+                window.location.href = 'pembayaran.html';
+            })
+            .catch(error => {
+                console.error('Terjadi kesalahan:', error);
+            });
+    } else {
+        alert('Akses tidak diizinkan dari URL ini.');
+    }
 });
