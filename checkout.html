@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/checkout.css">
+    <title>CheckIn</title>
+</head>
+<body>
+    <div class="container">
+        <img src="image/Banner.png" alt="Top Image" class="top-image"><br></a>
+        <div class="form-container">
+            <a href="index.html"><img src="image/Logo.png" alt="Logo" class="logo"></a>
+            <h2>Check-In</h2>
+            <p>Silakan isi dengan lengkap formulir check-in berikut</p>
+
+            <form id="checkinForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Input Email anda" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstName">Nama Depan</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Input Nama Depan anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Nama Belakang</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Input Nama Belakang anda" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="number" id="phone" name="phone" placeholder="Masukkan Nomor Telepon" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productName">Jenis Kamar</label>
+                    <input type="text" id="productName" name="productName" placeholder="Jenis Kamar" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Harga Kamar</label>
+                    <input type="text" id="productPrice" name="productPrice" placeholder="Harga Kamar" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for= "quantity">Jumlah Kamar</label>
+                    <input type="number" id="quantity" name="quantity" placeholder="Jumlah Kamar" min="1" max="20" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkIn">Check In</label>
+                    <input type="date" id="checkIn" name="checkIn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOut">Check Out</label>
+                    <input type="date" id="checkOut" name="checkOut" required>
+                </div>
+                
+                <div class="terms">
+                    <input type="checkbox" id="agreeTerms" required style="margin: 20px;">
+                    <label for="agreeTerms" style="font-size: small;">Dengan melengkapi data-data di atas, anda menyetujui Syarat & Ketentuan dan Kebijakan Privasi JelajaHotel.</label>
+                </div>
+                <br>
+
+                <button type="button">Pesan Kamar Sekarang</button>
+            </form>
+
+            <br>
+
+           
+        </div>
+        <br>
+        <div class="footer">
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+    
+    <script src="js/api_checkout.js"></script>
+</body>
+</html>
