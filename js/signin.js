@@ -1,17 +1,33 @@
 function signIn() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
- 
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-     if (this.readyState == 4 && this.status == 200) {
-       alert("Sign In successful");
-     } else if (this.readyState == 4 && this.status != 200) {
-       alert("Sign In failed");
-     }
-  };
- 
-  xhttp.open("POST", "your_sign_in_endpoint", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
- }
+      // Buat objek data
+      const data = {
+        user_name: username,
+        password: password
+    }
+
+    fetch("http://localhost:3000/login/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            return Promise.reject(response);
+        })
+        .then(function (data) {
+            alert('Login Telah Berhasil');
+            localStorage.setItem("user", JSON.stringify(data.data))
+            window.location.replace("index.html")
+        }).catch(function (error) {
+            console.log(error);
+        });
+}
+
+document.querySelector('Masuk').addEventListener('Masuk', postRegFormData);
+
