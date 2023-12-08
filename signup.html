@@ -1,19 +1,22 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="signup.css">
     <title>Sign Up</title>
 </head>
 <body>
     <div class="container">
-        <img src="image/image-26.png" alt="Top Image" class="top-image"><br>
+        <img src="FrontEnd/image-26.png" alt="Top Image" class="top-image"><br>
         <div class="form-container">
-            <a href="index.html"><img src="image/Logo.png" alt="Logo" class="logo"></a>
+            <img src="FrontEnd/Logo.png" alt="Logo" class="logo">
             <h2>Buat Akun</h2>
             <form id="signupForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="username" id="username" name="username" placeholder="Username" required>
+                </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Nomor Ponsel atau Email" required>
@@ -22,7 +25,7 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Kata Sandi" required>
                 </div>
-                <button type="submit">Masuk</button>
+                <button type="submit" class="btn">Register</button>
             </form>
             <br>
             <div class="terms">
@@ -39,6 +42,6 @@
             <br>
         </div>
     </div>
-    <script src="js/signup.js"></script>
+<script src="./js/signup.js"></script>
 </body>
 </html>
