@@ -3,16 +3,16 @@ function postRegFormData(event) {
 
     // Ambil data dari form
     const form = event.target;
-    const username = form.querySelector('[name="username"]').value;
+    const email = form.querySelector('[name="email"]').value;
     const password = form.querySelector('[name="password"]').value;
 
     // Buat objek data
     const data = {
-        user_name: username,
+        email: email,
         password: password
     }
 
-    fetch("http://localhost:3310/registration", {
+    fetch("http://localhost:3000/login/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
