@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    if (localStorage.getItem(email) !== null) {
-        alert('Email sudah terdaftar! Silahkan masuk atau gunakan email lain.');
-    } else {
-        localStorage.setItem(email, password);
-        alert('Akun berhasil dibuat! Silahkan masuk.');
-        window.location.href = 'signin.html';
-    }
-});
-=======
 // fetch('http://localhost:3000/registration')
 //     .then(response => response.json())
 //     .then(data => {
@@ -36,13 +21,20 @@ if (signupForm) {
         const username = document.getElementById('username').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
+        
+        const data = {
+            user_name: username,
+            email,
+            password
+          }
 
-        fetch('http://localhost:3000/registration', {
+          console.log(data)
+        fetch('http://localhost:3000/registration/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, email, password }),
+            body: JSON.stringify(data),
         })
         .then(response => response.json())
         .then(data => {
@@ -96,4 +88,3 @@ if (signupForm) {
 
 // document.querySelector('signupForm').addEventListener('Masuk', postRegFormData);
 // document.getElementById('signupForm').addEventListener('submit', postRegFormData);
->>>>>>> 5ad886696691e936c00c7b4b5a0a6bf5d0949bd8
