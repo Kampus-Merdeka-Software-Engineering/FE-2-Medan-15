@@ -49,3 +49,20 @@ function setProductInfo() {
 
 // Call the function when the page loads
 window.onload = setProductInfo;
+
+ // Fungsi untuk memperbarui nilai minimum tanggal
+ function updateMinDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    // Set nilai minimum pada elemen input
+    document.getElementById('myDate').min = today;
+    document.getElementById('myDate2').min = today;
+}
+
+// Panggil fungsi updateMinDate() saat halaman dimuat
+window.onload = updateMinDate;
