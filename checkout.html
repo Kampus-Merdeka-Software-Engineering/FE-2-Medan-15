@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,12 +52,12 @@
 
                 <div class="form-group">
                     <label for="checkIn">Check In</label>
-                    <input type="date" id="myDate" name="myDate" min="" onchange="updateMinDate()">
+                    <input type="date" id="checkIn" name="checkIn" required>
                 </div>
 
                 <div class="form-group">
                     <label for="checkOut">Check Out</label>
-                    <input type="date" id="myDate2" name="myDate2" min="" onchange="updateMinDate()">
+                    <input type="date" id="checkOut" name="checkOut" required>
                 </div>
                 
                 <div class="terms">
@@ -67,7 +66,7 @@
                 </div>
                 <br>
 
-                <button type="submit">Pesan Kamar Sekarang</button>
+                <button type="button">Pesan Kamar Sekarang</button>
             </form>
 
             <br>
@@ -81,27 +80,7 @@
             <br>
         </div>
     </div>
-    <script>
-        // Fungsi untuk memperbarui nilai minimum tanggal
-        function updateMinDate() {
-            var today = new Date();
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
-            var yyyy = today.getFullYear();
-
-            today = yyyy + '-' + mm + '-' + dd;
-
-            // Set nilai minimum pada elemen input
-            document.getElementById('myDate').min = today;
-            document.getElementById('myDate2').min = today;
-        }
-
-        // Panggil fungsi updateMinDate() saat halaman dimuat
-        window.onload = updateMinDate;
-    </script>
-
-    <script src="js/checkout.js"></script>
     
-</div>
+    <script src="js/api_checkout.js"></script>
 </body>
 </html>
