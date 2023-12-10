@@ -99,12 +99,25 @@ function updateMinDate() {
     myDate2Input.min = myDateInput.value || today;
 }
 
+// Function to check if quantity exceeds 20
+function checkQuantity() {
+    const quantity = document.getElementById('quantity').value;
+    if (quantity > 20) {
+        alert('Maaf, Anda Hanya Bisa Memesan Max. 20 Kamar');
+        // Reset quantity to 20
+        document.getElementById('quantity').value = 20;
+    }
+}
+
 // Call both functions when the page loads
 window.onload = function () {
     setProductInfo();
     updateMinDate();
-    // Add event listener after setting product information
-    document.getElementById('quantity').addEventListener('input', calculateTotalPrice);
+    // Add event listeners after setting product information
+    document.getElementById('quantity').addEventListener('input', function () {
+        checkQuantity();
+        calculateTotalPrice();
+    });
     document.getElementById('myDate').addEventListener('input', updateMinDate);
 };
 // Event listener untuk tombol pesan kamar
