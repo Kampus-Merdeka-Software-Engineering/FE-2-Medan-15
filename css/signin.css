@@ -1,7 +1,8 @@
-<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 h2 {
@@ -30,6 +31,12 @@ h2 {
     pointer-events: none;
 }
 
+a {
+    text-decoration: none;
+    color: #5ab8f2;
+    font-weight: bold;
+}
+
 .logo {
     width: 220px;
     height: auto;
@@ -48,7 +55,15 @@ h2 {
     border-bottom: 1px solid #ccc;
     padding: 5%; /* Menggunakan unit persentase untuk padding */
     padding-top: 1%;
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+input[type=checkbox] {
+    /* All browsers except webkit*/
+    transform: scale(2);
+    /* Webkit browsers*/
+    -webkit-transform: scale(2);
+  }
 
 .form-group {
     margin-bottom: 15px;
@@ -58,12 +73,14 @@ label {
     display: block;
     margin-bottom: 5px;
     text-align: left;
+    font-weight: bold;
 }
 
 input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    font-size: medium;
 }
 
 button {
@@ -72,8 +89,14 @@ button {
     color: white;
     padding: 10px 0;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+}
+
+.btn a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    font-weight: bol;
 }
 
 .terms {
@@ -134,141 +157,4 @@ p {
         width: 100%;
         max-width: none;
     }
-=======
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-h2 {
-    margin-top: -30px;
-}
-
-.container {
-    text-align: center;
-}
-
-.top-image {
-    width: 100%;
-    max-width: 40%;
-    position: relative;
-    padding-top: 10px;
-}
-
-.top-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    pointer-events: none;
-}
-
-.logo {
-    width: 220px;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    position: relative;
-    background-color: white;
-    padding-bottom: 25px;
-}
-
-.form-container {
-    max-width: 30%;
-    margin: auto;
-    margin-bottom: 30px;
-    border-inline: 1px solid #ccc; /* Tambahkan border dengan warna dan ketebalan sesuai kebutuhan */
-    border-bottom: 1px solid #ccc;
-    padding: 5%; /* Menggunakan unit persentase untuk padding */
-    padding-top: 1%;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-button {
-    width: 100%;
-    background-color: #5ab8f2;
-    color: white;
-    padding: 10px 0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.terms {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    margin-bottom: 15px;
-    padding-left: 10px;
-}
-
-.terms input {
-    width: 10px; 
-    margin-right: 5px; 
-}
-
-.terms label {
-    flex: 1; 
-}
-
-p {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-.footer {
-    background-color: #5ab8f2;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-@media screen and (max-width: 767px) {
-    h2 {
-        margin-top: 10px;
-        font-size: 22px;
-    }
-    
-    .top-image {
-        width: 100%;
-        max-width: none; /* Hilangkan batasan max-width untuk smartphone dan tablet */
-    }
-
-    .logo {
-        width: 200px; /* Sesuaikan ukuran logo yang lebih kecil untuk layar kecil */
-        margin-bottom: 20px; /* Sesuaikan margin bottom jika diperlukan */
-    }
-
-    .form-container {
-        max-width: 100%; /* Membuat form-container mengambil lebar penuh */
-        padding: 5%; /* Menyesuaikan padding untuk layar kecil */
-    }
-
-    p {
-        font-size: 14px; /* Sesuaikan ukuran font yang lebih kecil untuk layar kecil */
-    }
-
-    .footer {
-        width: 100%;
-        max-width: none;
-    }
->>>>>>> 5ad886696691e936c00c7b4b5a0a6bf5d0949bd8
 }
