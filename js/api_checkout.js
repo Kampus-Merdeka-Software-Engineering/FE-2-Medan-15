@@ -38,7 +38,7 @@
           localStorage.setItem('formData', formDataJSON);
   
           // Menampilkan pesan sukses atau tindakan selanjutnya
-          alert('Data berhasil disimpan. Lanjutkan ke halaman pembayaran atau tindakan selanjutnya.');
+          alert('Data berhasil disimpan. Kami tunggu kedatangan Anda!.');
   
           // Menampilkan data di konsol untuk keperluan debugging
           console.log('Data Pembayaran:', formData);
