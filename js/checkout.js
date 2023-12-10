@@ -148,5 +148,5 @@ document.querySelector('button').addEventListener('click', function() {
     sessionStorage.setItem('reservationData', JSON.stringify(reservationData));
 
     // Redirect ke halaman detail_checkout.html
-    // window.location.href = 'detail_checkout.html';
+     window.location.href = 'detail_checkout.html';
 });
