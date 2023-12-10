@@ -103,3 +103,36 @@ window.onload = function () {
     // Add event listener after setting product information
     document.getElementById('quantity').addEventListener('input', calculateTotalPrice);
 };
+
+
+// Event listener untuk tombol pesan kamar
+document.querySelector('button').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const phone = document.getElementById('phone').value;
+    const productName = document.getElementById('productName').value;
+    const productPrice = document.getElementById('productPrice').value;
+    const quantity = document.getElementById('quantity').value;
+    const checkIn = document.getElementById('myDate').value;
+    const checkOut = document.getElementById('myDate2').value;
+
+    const reservationData = {
+        email,
+        firstName,
+        lastName,
+        phone,
+        productName,
+        productPrice,
+        quantity,
+        checkIn,
+        checkOut,
+    };
+
+    // Gunakan sessionStorage untuk menyimpan data formulir
+    sessionStorage.setItem('reservationData', JSON.stringify(reservationData));
+
+    // Redirect ke halaman detail_checkout.html
+    window.location.href = 'detail_checkout.html';
+});
+
