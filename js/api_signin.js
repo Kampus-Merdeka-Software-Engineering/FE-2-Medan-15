@@ -34,4 +34,4 @@ function postRegFormData(event) {
         });
 }
 
-document.querySelector('#signinform').addEventListener('submit', postRegFormData);
+document.querySelector('#signinForm').addEventListener('submit', postRegFormData);
