@@ -58,7 +58,7 @@
                   // Handle respons dari server (jika diperlukan)
                   console.log('Respon dari server:', data);
                   // Misalnya, lanjutkan ke halaman pembayaran setelah berhasil membayar
-                  window.location.href = 'pembayaran.html';
+                  window.location.href = 'detail_checkout.html';
               })
               .catch(error => {
                   console.error('Terjadi kesalahan:', error);
