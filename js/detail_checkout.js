@@ -10,13 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Tampilkan data reservasi
         populateTable('reservasi-row', ['Jenis Kamar', 'Harga Kamar', 'Jumlah Kamar', 'Check-in', 'Check-out'], [reservationData.productName, reservationData.productPrice, reservationData.quantity, reservationData.checkIn, reservationData.checkOut]);
     }
-
-    // Add event listener to the "Selesai" button
-    const selesaiButton = document.querySelector('button');
-    selesaiButton.addEventListener('click', function () {
-        // Redirect to index.html
-        window.location.href = 'index.html';
-    });
 });
 
 // Function to dynamically populate a table with data
