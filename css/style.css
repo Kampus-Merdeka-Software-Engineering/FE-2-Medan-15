@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'DM Sans', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -36,7 +36,7 @@ header {
 }
 
 .logo img {
-  width: 120px;
+  width: 250px;
 }
 
 header nav {
@@ -570,7 +570,7 @@ input {
 }
 
 .site-footer img {
-  max-width: 100%;
+  max-width: 30%;
 }
 
 .site-footer h3 {
@@ -582,12 +582,14 @@ input {
 }
 
 .site-footer .contact-info {
-  display: flex;
+  display: inline-block;
   align-items: center;
+  padding: 30px;
+  margin: 10px;
 }
 
 .site-footer .contact-info img {
-  margin-right: 10px;
+  margin-top: 20px;
 }
 
 
