@@ -80,10 +80,9 @@ function calculateTotalPrice() {
     document.getElementById('productPrice').value = formatPrice(totalPrice);
 }
 
-
 // Function to update minimum date value
 function updateMinDate() {
-    let today = new Date(); // Change const to let
+    let today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     const yyyy = today.getFullYear();
@@ -91,10 +90,14 @@ function updateMinDate() {
     today = yyyy + '-' + mm + '-' + dd;
 
     // Set minimum value for date input elements
-    document.getElementById('myDate').min = today;
-    document.getElementById('myDate2').min = today;
-}
+    const myDateInput = document.getElementById('myDate');
+    const myDate2Input = document.getElementById('myDate2');
 
+    myDateInput.min = today; // Minimum date for myDate is today
+
+    // Set minimum date for myDate2 to the selected date in myDate
+    myDate2Input.min = myDateInput.value || today;
+}
 
 // Call both functions when the page loads
 window.onload = function () {
@@ -102,9 +105,8 @@ window.onload = function () {
     updateMinDate();
     // Add event listener after setting product information
     document.getElementById('quantity').addEventListener('input', calculateTotalPrice);
+    document.getElementById('myDate').addEventListener('input', updateMinDate);
 };
-
-
 // Event listener untuk tombol pesan kamar
 document.querySelector('button').addEventListener('click', function() {
     const email = document.getElementById('email').value;
@@ -135,4 +137,3 @@ document.querySelector('button').addEventListener('click', function() {
     // Redirect ke halaman detail_checkout.html
     window.location.href = 'detail_checkout.html';
 });
-
