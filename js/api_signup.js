@@ -63,7 +63,7 @@ if (signupForm) {
 function confirmsignup(signup) {
     var confirmation = confirm('Apakah Anda yakin ingin membuat akun?');
     if (confirmation) {
-        alert('Registrasi berhasil!');
+        alert('Registrasi berhasil! Silahkan klik Login');
         document.getElementById(signup).remove();
     } else {
         alert('Registrasi belum berhasil.');
