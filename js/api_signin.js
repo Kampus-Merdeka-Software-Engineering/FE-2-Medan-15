@@ -1,37 +1,49 @@
-function postRegFormData(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const signinForm = document.getElementById('signinForm');
+    const successPopup = document.getElementById('successPopup');
 
-    // Ambil data dari form
-    const form = event.target;
-    const email = form.querySelector('[name="email"]').value;
-    const password = form.querySelector('[name="password"]').value;
+    signinForm.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    // Buat objek data
-    const data = {
-        email: email,
-        password: password
-    }
+        // Simulasi data yang berhasil
+        const userData = {
+            username: 'contoh_user',
+            password: 'contoh_password'  // Gantilah dengan nilai yang sesuai dari formulir login
+        };
 
-    fetch("http://localhost:3000/login/", {
+        // Tampilkan popup atau pesan berhasil
+        showSuccessPopup();
+
+        // Simpan data pengguna ke local storage
+        localStorage.setItem("user", JSON.stringify(userData));
+
+        // Lakukan fetch dengan metode POST
+        fetch("http://localhost:3000/login/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(userData),
         })
-        .then(function (response) {
-            if (response.ok) {
-                return response.json();
-            }
-            return Promise.reject(response);
-        })
-        .then(function (data) {
-            alert('Login Telah Berhasil');
-            localStorage.setItem("user", JSON.stringify(data.data))
-            window.location.replace("index.html")
-        }).catch(function (error) {
-            console.log(error);
-        });
-}
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response Data:', data);
+                // Lakukan sesuatu dengan data respons jika diperlukan
+            })
+            .catch(error => console.error('Fetch Error:', error));
 
-document.querySelector('#signinform').addEventListener('submit', postRegFormData);
+        // Redirect atau navigasi ke halaman beranda (index.html)
+        window.location.replace("index.html");
+    });
+
+    function showSuccessPopup() {
+        // Tampilkan popup
+        successPopup.style.display = 'block';
+
+        // Sembunyikan popup setelah beberapa detik (opsional)
+        setTimeout(function () {
+            successPopup.style.display = 'none';
+        }, 3000); // Sembunyikan setelah 3 detik, sesuaikan kebutuhan Anda
+    }
+});
+
